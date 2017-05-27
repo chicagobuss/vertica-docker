@@ -1,0 +1,25 @@
+stop_id,on_street,cross_street,routes,boardings,alightings,month_beginning,daytype,location
+
+stop_id int,
+on_street varchar(128),
+cross_street varchar(128),
+routes varchar(128),
+boardings float,
+alightings float,
+month_beginning date,
+daytype varchar(16),
+location geometry(200)
+
+
+create table rides (
+stop_id int,
+on_street varchar(128),
+cross_street varchar(128),
+routes varchar(128),
+boardings float,
+alightings float,
+month_beginning date,
+daytype varchar(16),
+location varchar(200) );
+
+copy rides from '/tmp/rides.csv' delimiter ',' enclosed by '"' skip 1;
